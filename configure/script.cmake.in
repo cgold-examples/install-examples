@@ -1,0 +1,10 @@
+# script.cmake.in
+
+cmake_minimum_required(VERSION 2.8)
+
+set(correct "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
+
+message("Incorrect value: '@CMAKE_INSTALL_PREFIX@'")
+message("Correct value: '${correct}'")
+
+file(WRITE "${correct}/share/foo/info" "Some info")
